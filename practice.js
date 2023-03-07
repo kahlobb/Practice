@@ -1,143 +1,71 @@
-class Player {
-    constructor(name, position) {
-        this.name = name;
-        this.position = position;
-    }
-
-    describe() {
-        return `${this.name} plays ${this.position}.`;
+// function that returns Even and Odd numbers
+function evenOrOdd(numbers) {
+    if(numbers % 2 === 0) {
+        return "Even";
+    } else {
+        return "Odd";
     }
 }
 
-class Team {
-    constructor(name) {
-        this.name = name;
-        this.players = [];
-    }
-    
-    addPlayer(player) {
-        if(player instanceof Player) {
-            this.player.push(player);
-        } else {
-            throw new Error(`You can only add an instance of Player. Argument is not a player: ${player}`);
-        }
-    }
-//this description prints out name of team and number of players in the team.
-    describe() {
-        return `${this.name} has ${this.players.length} players`;
-    }
+//Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+//example(input => output)
+//35231 => [1,3,2,5,3]
+//0 => [0]
+
+//
+
+
+//convert number to a string so we can iterate over its characters
+//function digitize(n) {
+    //let nString = n.toString();
+    //let digitizeArray = [];
+
+    // iterate over characters in a string from right to left
+    //for(let )
+
+//Your task is to make two functions ( max and min, or maximum and minimum, etc., 
+//depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list.
+
+//var min = function(list);
+
+let costOfMilk = 3;
+
+if(costOfMilk < 2) {
+    console.log('We will buy 2 gallons');
+} else if(costOfMilk < 3) {
+    console.log('We will buy only 1 gallon');
+} else {
+    console.log('No thanks, way too expensive!');
 }
-// Null is used in the beginning because no teams have been selected yet.
-class Menu {
-    constructor() {
-        this.teams = [];
-        this.selectedTeam = null;
-    }
-//entry point to application. Top down development approach (start at top building methods and then implement them).
-    start(){
-        let selection = this.showMainMenuOptions();
 
-        while(selection != 0) {
-            switch(selection) {
-                case '1':
-                    this.createTeam();
-                    break;
-                case '2':
-                    this.viewTeam();
-                    break;
-                case '3':
-                    this.deleteTeam();
-                    break;
-                case '4':
-                    this.displayTeams();
-                    break;
-                default:
-                    selection = 0;
-            }
-            selection = this.showMainMenuOptions();
-        }
+var grade = 'C';
 
-        alert('Goodbye!');
-    }
-//implementation of methods when they happen
-    showMainMenuOptions() {
-        return prompt(`
-            0) exit
-            1) create new team
-            2) view team
-            3) delete team
-            4) display all teams
-        `);
-    }
+switch(grade) {
+    case 'A':
+        console.log('90-100');
+        break;
+    case 'B':
+        console.log('80-89');
+        break;
+    case 'C':
+        console.log('70-79');
+        break;
+    default:
+        console.log('0-69');
+}
 
-    showTeamMenuOptions(teamInfo) {
-        return prompt(`
-        0) back
-        1) create player
-        2) delete player
-        -------------------
-        ${teamInfo}
-        `);
-    }
+var a = 5;
+var b = 6;
 
-// This will show the teams numbered with their names next to each number listed on individual lines.
-    displayTeams() {
-        let teamString = '';
-        for(let i = 0; i < this.teams.length; i++) {
-            teamString += i + ') ' + this.teams[i].name + '\n';
-        }
-        alert(teamString);
-    }
-// Team only uses one parameter which is "name"
-    createTeam() {
-        let name = prompt('Enter name for new team:');
-        this.teams.push(new Team(name));
-    }
-// -1 allows us to validate user input without crashing and errors
-    viewTeam() {
-        let index = prompt('Enter the index of the team they wish to view:');
-        if(index > -1 && index < this.teams.length) {
-            this.selectedTeam = this.teams[index];
-            let description = 'Team Name: ' + this.selectedTeam.name + '\n';
-
-
-            //selectedTeam is a team, each team has a players array
-            for(let i = 0; i < this.selectedTeam.players.length; i++) {
-                description += i + ') ' + this.selectedTeam.players[i].name 
-                    + ' - ' + this.selectedTeam.players[i].position + '\n';
-            }
-
-            let selection = this.showTeamMenuOptions(description);
-            switch(selection) {
-                case '1':
-                    this.createPlayer();
-                    break;
-                case '2':
-                    this.deletePlayer();
-            }
-        }
-    }
-
-    deleteTeam() {
-        let index = prompt('Enter the index of the team you wish to delete:');
-        if(index > -1 && index < this.teams.length) {
-            this.teams.splice(index, 1);
-        }
-    }
-
-    createPlayer() {
-        let name = prompt('Enter name for new player:');
-        let position = prompt('Enter position for new player:');
-        this.selectedTeam.players.push(new Player(name, position));
-    }
-
-    deletePlayer() {
-        let index = prompt('Enter index of player you wish to delete:');
-        if(index > -1 && index < this.selectedTeam.players.length) {
-            this.selectedTeam.players.splice(index, 1);
-        }
+if(a == 5) {
+    if(b == 6) {
+        console.log('a is 5 and b is 6');
+    } else {
+        console.log
     }
 }
 
-let menu = new Menu();
-menu.start();
+//flatten upper code
+if(a == 5 && b == 6) {
+    console.log('a is 5 and b is 6');
+}
