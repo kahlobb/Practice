@@ -69,3 +69,46 @@ if(a == 5) {
 if(a == 5 && b == 6) {
     console.log('a is 5 and b is 6');
 }
+
+// filling a bowl of flour in a recipe
+//using a loop
+ for(let i = 0; i < 10; i++) {
+    console.log(i);
+ }  
+
+ //printing even numbers
+ for(let i = 0; i <= 20; i++) {
+    if(i % 2 == 0) {
+        console.log(i);
+    }
+ }
+
+ let names = ['Sam', 'Tom', 'Hillary'];
+ 
+ for(let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+ }
+
+ //while loop is good for something you need to do over and over until a condition is met
+// below is an infinite loop = can cause a crash
+ /*let a = 110;
+
+ while(a < 10) {
+    console.log(a);
+ }*/
+
+ //do-while loop - always iterate at least once and then check condition again.
+
+ /*do {
+    console.log(a);
+ } while (a < 10);*/
+
+
+ //starts at 0 and then increments
+ for (i in names) {
+    console.log(names[i]);
+ }
+
+ for (i of names) {
+    console.log(i);
+ }
